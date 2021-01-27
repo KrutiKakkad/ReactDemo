@@ -3,6 +3,7 @@ import { Button } from "semantic-ui-react";
 interface IProps {
   value: number;
   symbol: string;
+  currencyClicked?: (value: number) => void;
 }
 
 export const Currency = (props: IProps) => {
@@ -10,6 +11,7 @@ export const Currency = (props: IProps) => {
 
   const childClick = () => {
     console.log("child click");
+    props.currencyClicked && props.currencyClicked(100);
   };
   return (
     <div>
